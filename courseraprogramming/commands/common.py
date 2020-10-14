@@ -47,7 +47,9 @@ def arg_fq_dir(dirname):
         # TODO: add some sanity checks if on boot2docker system to ensure that
         # the fully qualified path is somewhere within the /Users/$USER
         # directory (or equivalent on windows).
-        raise argparse.ArgumentTypeError(msg)
+        # TODO: Sanity check
+        # raise argparse.ArgumentTypeError(msg)
+        return dirname
     else:
         return os.path.abspath(os.path.expanduser(dirname))
 
